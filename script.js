@@ -1,11 +1,10 @@
 var total = 0;
-
 function criarBalao() {
   var balao = document.createElement("div");
   balao.setAttribute("class", "balao");
 
-  var x = Math.floor(Math.random() * 600);
-  var y = Math.floor(Math.random() * 400);
+  var x = Math.floor(Math.random() * 500);
+  var y = Math.floor(Math.random() * 300);
 
   balao.setAttribute("style", "left:" + x + "px;top:" + y + "px;");
   balao.setAttribute("onclick", "estourar(this)");
@@ -24,11 +23,17 @@ function estourar(objt) {
   if (total >= 20) {
     alert("Parabéns ! Você zerou o game !");
     window.location.reload();
-  } 
+  }
 }
 
 function carregarJogo() {
-  setInterval(criarBalao, 500);
-
+  setInterval(criarBalao, 400);
 }
 
+function resetaGame() {
+  alert('Tempo esgotado')
+  window.location.reload();
+}
+
+
+setTimeout(resetaGame, 10000)
